@@ -27,6 +27,8 @@ namespace PlatfromService
         {
             services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMem"));
             services.AddScoped<IPlatformRepo, PlatformRepo>();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddControllers();
             services.AddControllersWithViews();
         }
 
